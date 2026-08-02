@@ -38,7 +38,7 @@ CREATE TABLE clientes (
 CREATE TABLE productos (
 		id_producto INT PRIMARY KEY,
 		nombre_producto VARCHAR(100) NOT NULL,
-		id_categoria INT,
+		id_categoria INT NOT NULL,
 		precio DECIMAL(10,2) NOT NULL,
 		stock INT DEFAULT 0,
 		activo TINYINT DEFAULT 1,
@@ -47,8 +47,8 @@ CREATE TABLE productos (
 
 CREATE TABLE ventas (
 		id_venta INT PRIMARY KEY,
-		id_cliente INT,
-		id_producto INT,
+		id_cliente INT NOT NULL,
+		id_producto INT NOT NULL,
 		cantidad INT NOT NULL,
 		precio_unitario DECIMAL(10,2) NOT NULL,
 		fecha_venta DATE NOT NULL,
